@@ -1,52 +1,91 @@
- GitHub Link : https://github.com/ItzRitikStark/School-Portal.git
- 
- Student & Teacher Login: https://ritik-project.onrender.com/user_login (email: ritik@gmail.com & password:11/04/2003)
- 
- Principle Login: https://ritik-project.onrender.com/login ( email: principle@classroom.com & Password:- Admin@123 )
+🎓 School Portal
 
+   Welcome to the School Portal project! 
+   This comprehensive platform is designed to streamline
+   the management of students, teachers, and administrative tasks for educational institutions.
 
- 1. For Principle Login: https://ritik-project.onrender.com/login (email:-principle@classroom.com & Password:- Admin@123
-  
- 2. For Student & Teacher Login: https://ritik-project.onrender.com/user_login
- 
- 3. when the student and Teacher account created then active their student & Teacher account then their DOB will be the password and login with Email URL:-(https://ritik- 
-   project.onrender.com/user_login)
+🌐 Live Demo
+♦ Principal Login: Principal Login
 
- 4.Principle can create account for student and teacher and their account active and deactive also delete their account
- 
- 5. Principle see the Student and Teacher List
- 
- 6. principle can view all active and pending student's & Teacher 
- 
- 7.Principle can add a Class,TimeTable, Fees and assign Teacher 
- 
- 8.Principle can view particular student and Teacher detail when tap on thier row. 
- 
- 9.Principle can submit the fees of student and check the fees history
+    Email: principle@classroom.com
+    Password: Admin@123
 
- 10.principle can mark the attendance of teachers
- 
- 11.Principle can update the own profile, student profile and Teacher profile 
- 
- 12. Principle can upload a Timetable of particular class
-   
- 13.Teacher can update the own profile
+♦ Student & Teacher Login: Student & Teacher Login
 
- 14. Teacher can view own overall atten dance & monthly attendance in graph
-  
- 15.Teacher can check their class student list
+    Email: ritik@gmail.com
+    Password: 11/04/2003
+    
+✨ Features
+👨‍💼 Principal Features
 
- 16. Teacher can mark the attendance of their students 
- 
- 17. student can see their profile and can edit it
-  
- 18. student can view their own attendance subject wise and monthly wise in graph
- 
- 19. student can submit the fees slip & check the slip status.
-  
- 20.student can check the due & paid fees
+♦ Account Management:
 
- 21. student can view their classmates list
-  
- 22. student can view their class timetable
+   Create, activate, deactivate, and delete accounts for both students and teachers.
+   Automatically generate passwords based on Date of Birth for newly created accounts.
+   Manage profiles for students, teachers, and even your own profile as the Principal.
+   
+♦ Student & Teacher Oversight:
 
+   View lists of all students and teachers, including active and pending accounts.
+   Dive deeper into specific student or teacher details by tapping on their row.
+   
+♦ Classroom Management:
+
+   Add new classes and assign teachers to them.
+   Upload and manage timetables for each class.
+   
+♦ Fees Management:
+
+   Submit and track student fees with ease.
+   Access a detailed history of all fees transactions.
+
+♦ Attendance Management:
+
+   Mark and monitor teacher attendance.
+   Review overall attendance trends and monthly stats.
+   
+👩‍🏫 Teacher Features
+♦ Profile Management:
+
+   Update your own profile details.
+
+♦Attendance Tracking:
+
+   View your overall and monthly attendance through interactive graphs.
+
+♦ Classroom Oversight:
+
+   Access the list of students in your class.
+   Mark attendance for students under your care.
+
+🎒 Student Features
+♦ Profile Management:
+
+   View and edit your personal profile details.
+
+♦ Attendance Overview:
+
+   Monitor your attendance, both subject-wise and monthly, using detailed graphs.
+   
+♦ Fees Management:
+
+   Submit your fees slips and check their status.
+   View due and paid fees at a glance.
+   
+♦ Classmate Interactions:
+
+   See the list of your classmates.
+   
+♦ Timetable Access:
+
+   View the timetable for your class.
+   
+🚀 Getting Started
+♦ To explore and contribute to this project, follow the instructions below.
+
+♦ Prerequisites
+  PHP
+  Laravel
+  Node.js
+  Composer
+  Database (MySQL recommended)
