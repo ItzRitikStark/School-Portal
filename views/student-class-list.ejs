@@ -1,0 +1,82 @@
+<%- include('includes/header') %>
+  <!-- ======= Sidebar ======= -->
+  <%- include('includes/sidebar') %>
+    <main id="main" class="main">
+      <h1>Student Class List</h1>
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Class Listing Table -->
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Student Name</th>
+                  <th scope="col">Roll no</th>
+                  <th scope="col">Class Name</th>
+                  <th scope="col">Section</th>
+                </tr>
+              </thead>
+              <% if(data1.length> 0 && session.role == 3) { %>
+                <tbody>
+                  <% data1.forEach(function(c, index) { %>
+                    <tr>
+                      <td>
+                        <%= index + 1 %>
+                      </td>
+                      <td>
+                        <%= c.full_name %>
+                      </td>
+                      <td>
+                        <%= c.roll_no %>
+                      </td>
+                      <td>
+                        <%= c.class_name %>
+                      </td>
+                      <td>
+                        <%= c.section %>
+                      </td>
+
+                    </tr>
+                    <% }); %>
+                </tbody>
+                <% } else { %>
+
+                  <% if(data3.length> 0  && session.role == 2) { %>
+                    <tbody>
+                      <% data3.forEach(function(c, index) { %>
+                        <tr>
+                          <td>
+                            <%= index + 1 %>
+                          </td>
+                          <td>
+                            <%= c.full_name %>
+                          </td>
+                          <td>
+                            <%= c.roll_no %>
+                          </td>
+                          <td>
+                            <%= c.class_name %>
+                          </td>
+                          <td>
+                            <%= c.section %>
+                          </td>
+    
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                    <% } } %>
+
+                  
+
+            </table>
+          </div>
+        </div>
+      </div>
+    </main><!-- End #main -->
+
+
+
+    <!-- ======= Footer ======= -->
+    <%- include('includes/footer') %>
