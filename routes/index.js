@@ -13,6 +13,7 @@ const activeTeacher = require("../controllers/activeTeacherController");
 const loginController = require("../controllers/loginController");
 const attendanceController = require("../controllers/attendanceController");
 var express = require('express');
+const User = require("../models/userModel");
 var router = express.Router();
 
 const multer = require("multer");
@@ -49,15 +50,27 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-/* GET home page. */
+
 router.get("/", (req, res) => {
   if (req.session.user_id || req.session.ts_id) {
-    res.render('index',{ session: req.session});
+
+    User.ActiveStudent(req.session.user_id, (error, ActiveStudentData) => {
+      if (error) throw error;
+      User.InActiveStudent(req.session.user_id, (error, InActiveStudent) => {
+        if (error) throw error;
+        User.ActiveTeacher(req.session.user_id, (error, ActiveTeacher) => {
+          if (error) throw error;
+          User.InActiveTeacher(req.session.user_id, (error, InActiveTeacher) => {
+            if (error) throw error;
+            res.render('index', { session: req.session, ActiveStudentData: ActiveStudentData, InActiveStudent: InActiveStudent, ActiveTeacher: ActiveTeacher, InActiveTeacher: InActiveTeacher });
+          });
+        });
+      });
+    });
   } else {
     res.redirect("user_login");
   }
 });
-
 
 //Start Signin And SignUP Routes
 router.get("/logout", function (req, res, next) {
