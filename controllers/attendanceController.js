@@ -206,7 +206,7 @@ const attendanceController = {
     });
   },
 
-  getAllClassStudent(req, res) {
+getAllClassStudent(req, res) {
     const student_id = req.session.register_id;
     const role = req.session.role;
     const Teacher_id = req.session.register_id;
@@ -216,31 +216,29 @@ const attendanceController = {
         console.error('Error getting student details:', error);
         return res.status(500).send('Internal Server Error');
       }
-
+//console.log('data',data);
       if (data && data.length > 0) {
         const classId = data[0].class_id;
-
         student.getClassStudentList(classId, (error, data1) => {
           if (error) throw error;
-          student.getTeacherStudentList(Teacher_id, role, (error, data2) => {
-            if (error) throw error;
-            console.log('class_id', data2[0].class_id)
-            teacher_class_id = data2[0].class_id;
-             student.getClassStudentList(classId, (error, data3) => {
-              if (error) throw error;
-              res.render('student-class-list', { data1: data1, data3: data3, session: req.session });
-
-            });
-          });
+         // console.log('data1',data1);   
+              res.render('student-class-list', { data1: data1,  session: req.session });
         });
       } else {
-        console.log('No data found for student details');
-        res.send(`<script>
-          alert("No Student Found.");
-          window.location.href = '/teacher-detail';
-      </script>`);
+        student.getTeacherStudentList(Teacher_id, role, (error, data2) => {
+          if (error) throw error;
+          //console.log('class_id', data2[0].class_id);
+         // console.log('data2',data2);
+          teacher_class_id = data2[0].class_id;
+           student.getClassStudentList(teacher_class_id, (error, data1) => {
+            if (error) throw error;
+           // console.log('data1',data1);
+            res.render('student-class-list', { data1: data1, session: req.session });
+          });
+        });
       }
     });
+    
   }
 
 
